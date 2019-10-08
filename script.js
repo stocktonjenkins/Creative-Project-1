@@ -17,11 +17,14 @@ let app = new Vue({
         { currency: "Euro €", code:"EUR" },
         { currency: "Hong Kong Dollars 元", code:"HKD" },
         { currency: "India Rupees ₹", code:"INR" },
+        { currency: "Israeli New Sheqel", code:"ILS" },
         { currency: "Japan Yen ¥", code:"JPY" },
-        { currency: "North Korean Won ₩<", code:"KPW" },
-        { currency: "Russia Rubles руб<", code:"RUB" },
+        { currency: "North Korean Won ₩", code:"KPW" },
+        { currency: "Mexican Peso", code:"MXN" },
+        { currency: "Russia Rubles руб", code:"RUB" },
         { currency: "United Kingdom Pounds £", code:"EUR" },
-        
+        { currency: "Silver (troy ounce)", code:"XAG" },
+        { currency: "Gold (troy ounce)", code:"XAU" }
     ]
 
     }
