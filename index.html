@@ -1,0 +1,45 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div id="root">
+            <h1>Hello world.</h1>
+            <table>
+                <tr>
+                    <td>
+                        Convert:
+                        <input type="text" id="gp_amount" size="4">
+                    </td>
+                    <td>
+                        <select id="gp_from">
+                            <option v-for="option in conversionOptions" v-bind:value="option.code">{{ option.currency }}</option>
+                        </select>
+                    </td>
+                    <td>
+                        to
+                    </td>
+                    <td>
+                        <select id="gp_to">
+                            <option v-for="option in conversionOptions" v-bind:value="option.code">{{ option.currency }}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><input type='button' onClick='gp_convertIt()' value = 'Convert It' /></p>
+                    </td>
+                </tr>
+            </table>
+            <div id="gp_converted">
+                Output Here
+            </div>
+        </div>
+        
+        <script>"gp_currencySymbols()"</script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+        <script src="script.js"></script>
+        <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+        <script src="http://www.geoplugin.net/ajax_currency_converter.gp" type="text/javascript"></script>
+    </body>
+</html>
