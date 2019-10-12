@@ -1,44 +1,89 @@
 <html>
-    <head>
-        
-    </head>
-    <body>
-        <div id="root">
-            <table>
-                <tr>
-                    <td>
-                        Convert:
-                        <input type="text" id="gp_amount" size="4">
-                    </td>
-                    <td>
-                        <select id="gp_from">
-                            <option v-for="option in conversionOptions" v-bind:value="option.code">{{ option.currency }}</option>
-                        </select>
-                    </td>
-                    <td>
-                        to
-                    </td>
-                    <td>
-                        <select id="gp_to">
-                            <option v-for="option in conversionOptions" v-bind:value="option.code">{{ option.currency }}</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><input type='button' onClick='gp_convertIt()' value = 'Convert It' /></p>
-                    </td>
-                </tr>
-            </table>
-            <div id="gp_converted">
-                Output Here
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="row center">
+            <div class="col">
+                <a class="navbar-brand" href="#">
+                    <img src="/Creative-Project-2/countries/flag-of-United-States-of-America.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-France.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Australia.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Mexico.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Israel.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Russia.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Slovakia.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Thailand.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-United-Kingdom.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Germany.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Denmark.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Costa-Rica.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Greece.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Japan.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-India.png" width="50" height="30" alt="">
+                    <img src="/Creative-Project-2/countries/flag-of-Italy.png" width="50" height="30" alt="">
+                </a>
             </div>
         </div>
-        
-        <script>"gp_currencySymbols()"</script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
-        <script src="script.js"></script>
-        <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-        <script src="http://www.geoplugin.net/ajax_currency_converter.gp" type="text/javascript"></script>
-    </body>
+    </nav>
+
+    <div id="root">
+        <h1 class="title header">Currency Converter</h1>
+        <div class="background-image">
+            <div class="container" style="margin-top:50px">
+                <div class="currency-converter body center">
+                    <div class="row center converterRow">
+                        <div class="col">
+                            <strong>Convert:</strong>
+                            <input type="text" id="gp_amount" size="4">
+                            <select id="gp_from">
+                                <option v-for="option in conversionOptions" v-bind:value="option.code">{{ option.currency }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row center converterRow">
+                        <div class="col">
+                            <strong>to</strong>
+                            <select id="gp_to">
+                                <option v-for="option in conversionOptions" v-bind:value="option.code">{{ option.currency }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row center">
+                        <div class="col">
+                            <input class="button" type='button' onClick='gp_convertIt()' value='Convert' />
+                        </div>
+                    </div>
+                    <div class="row center converterRow">
+                        <div class="col">
+                            <div id="gp_converted" class="center results">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-copyright text-center py-3">
+                <a href="https://github.com/stocktonjenkins/Creative-Project-2"> Github Repository for this site</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        "gp_currencySymbols()"
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="script.js"></script>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script src="http://www.geoplugin.net/ajax_currency_converter.gp" type="text/javascript"></script>
+</body>
+
 </html>
